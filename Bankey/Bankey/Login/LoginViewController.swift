@@ -70,7 +70,7 @@ extension LoginViewController {
         view.addSubview(subtitleLabel)
         view.addSubview(loginView)
         view.addSubview(signInButton)
-        view .addSubview(errorMessageLabel)
+        view.addSubview(errorMessageLabel)
         
         // Title Label Constraints
         NSLayoutConstraint.activate([
@@ -107,11 +107,13 @@ extension LoginViewController {
     }
 }
 
+// MARK: Actions
 extension LoginViewController {
     @objc private func signInTapped(sender: UIButton){
         errorMessageLabel.isHidden = true
         login()
     }
+    
     
     private func login() {
         guard let user = username, let pass = password?.lowercased() else {
